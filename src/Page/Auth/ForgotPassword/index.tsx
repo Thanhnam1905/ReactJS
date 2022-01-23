@@ -1,14 +1,14 @@
-import React, { useCallback, useMemo, useState } from "react";
+import React, { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
+import userIcon from "../../../assets/user.svg";
 import style from "./ForgotPassword.module.css";
-import userIcon from "../../assets/user.svg";
 
 const ForgotPassword = () => {
   const [username, setUsername] = useState("");
   const [authCode, setAuthCode] = useState("");
   const isActive = useMemo(
     () => username !== "" && authCode !== "",
-    [username, authCode],
+    [username, authCode]
   );
 
   const handleSubmit = (e: any) => {
@@ -65,7 +65,8 @@ const ForgotPassword = () => {
           <button
             disabled
             className={`${style.button} ${style.button_inactive}`}
-            onClick={handleSubmit}>
+            onClick={handleSubmit}
+          >
             Cấp lại mật khẩu
           </button>
         )}
