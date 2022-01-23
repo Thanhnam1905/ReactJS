@@ -1,10 +1,10 @@
+import { onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import passwordIcon from "../../../assets/password.svg";
+import userIcon from "../../../assets/user.svg";
+import { auth } from "../../../Firebase";
 import style from "./Login.module.css";
-import userIcon from "../../assets/user.svg";
-import passwordIcon from "../../assets/password.svg";
-import { onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../Firebase";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -19,14 +19,12 @@ const Login = () => {
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-
     try {
       setLoading(true);
-      const user = await signInWithEmailAndPassword(auth, username, password);
+      await signInWithEmailAndPassword(auth, username, password);
       setLoading(false);
-      navigate("/login-success");
+      navigate("/Billing");
     } catch (error) {
-      console.log(error);
       setLoading(false);
     }
   };
