@@ -12,7 +12,7 @@ function RenderUI({ children }: RenderUIProps) {
       <Navbar />
       <div className="wrapper">
         <Header />
-        <div className="container">{children}</div>
+        {children}
       </div>
     </>
   );

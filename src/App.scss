@@ -9,11 +9,12 @@
 
 body {
   font-family: "Mulish", sans-serif;
+  background-color: #f9f6f4;
 }
 
 .App {
   height: 100vh;
-  background-color: #fff;
+  background-color: #f9f6f4;
 }
 
 h1 {
@@ -68,10 +69,42 @@ h1 {
 }
 
 .wrapper {
-  margin-left: 112px;
+  margin-left: 321px;
+  padding: 0 33px;
 }
 ul {
   padding: 0;
   margin: 0;
   list-style-type: none;
+}
+
+.Management,
+.header {
+  &-search {
+    position: relative;
+    padding: 10px 16px;
+    background: #ededed;
+    border-radius: 12px;
+    max-width: 470px;
+    width: 100%;
+    img {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+    }
+    input {
+      background: none;
+      border: none;
+      width: 100%;
+      &:focus {
+        outline: none;
+      }
+      &::placeholder {
+        font-size: 16px;
+        opacity: 0.3;
+        color: #1e0d03;
+      }
+    }
+  }
 }
