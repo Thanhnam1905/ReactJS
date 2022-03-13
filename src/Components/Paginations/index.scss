@@ -9,7 +9,7 @@
   }
   &__pages {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     --size: 8px;
     display: flex;
@@ -46,14 +46,9 @@
       padding: 20px 20px;
       cursor: pointer;
     }
-    .btn-prev {
-      img {
-        transform: rotate(90deg);
-      }
-    }
     .btn-next {
       img {
-        transform: rotate(-90deg);
+        transform: rotate(180deg);
       }
     }
     .btn-back.--to-end {
@@ -72,19 +67,15 @@
         align-items: center;
         color: #373839;
         transition: 0.3s;
-        font-weight: 400;
-        font-size: 16px;
+        font-size: 14px;
+        font-weight: 500;
         text-decoration: none;
-        &.is-active {
-          color: #fff;
-          background: #ff7506;
-          border-radius: 50px;
-          font-weight: 600;
-        }
+        &.is-active,
         &:hover {
-          color: #fff;
-          background: #ff7506;
+          color: #ff993c;
+          border: 1px solid #ff993c;
           border-radius: 50px;
+          border-radius: 4px;
         }
       }
     }

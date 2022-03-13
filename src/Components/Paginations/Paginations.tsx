@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import iconDropDown from "../../assets/icon-drop-down.svg";
 import { paginationWithDots } from "../../utils";
 import "./index.scss";
@@ -13,7 +13,7 @@ export interface PaginationProps {
 const Pagination = React.memo((props: PaginationProps) => {
   const {
     paging = {
-      pageCount: 3,
+      pageCount: 20,
       pageNo: 1,
       pageSize: 5,
     },
@@ -63,9 +63,6 @@ const Pagination = React.memo((props: PaginationProps) => {
     <>
       <div className="paginations">
         <div className="paginations__pages">
-          <div className="paginations__info">
-            Hiển thị <span>{paging.pageSize}</span> hàng trong mỗi trang
-          </div>
           <div className="pages">
             <ul>
               <li
